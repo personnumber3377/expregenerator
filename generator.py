@@ -58,7 +58,7 @@ def random_str(length: int):
 
 
 def rand_substr(string: str):
-	if len(string) < 1:
+	if len(string) < 2:
 		return string
 	start = random.randrange(len(string)-1)
 	end = random.randrange(start, len(string)-1)
@@ -166,8 +166,21 @@ def gen_expr() -> str:
 
 
 def main() -> None:
-	expression = gen_expr()
-	print(expression)
+
+	# This generates x expr expressions.
+
+	n = int(input("How many expressions do you want? : "))
+
+
+	for i in range(n):
+
+
+
+		expression = gen_expr()
+		#print(expression)
+		fh = open("out/"+str(i)+".txt", "w")
+		fh.write(expression)
+		fh.close()
 	return 0
 
 if __name__=="__main__":
